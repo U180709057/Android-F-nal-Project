@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".DecideWhatYouWantActivity">
+
+    <TextView
+        android:id="@+id/decidePageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="I WANT,"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="403dp"
+        android:layout_height="443dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decidePageText">
+
+        <RelativeLayout
+            android:id="@+id/sportAndNutrition"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:background="#A289CD"
+            android:gravity="center"
+            android:onClick="toSportProgramQuestions">
+
+            <TextView
+                android:id="@+id/sportAndDıetProgramText"
+                android:layout_width="142dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="48dp"
+                android:gravity="center"
+                android:text="Sport and Nutrition"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/dietImage"
+                android:layout_width="69dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="11dp"
+                app:srcCompat="@drawable/vegetable" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:background="#A289CD"
+            android:gravity="center"
+            android:onClick="toSportProgramQuestions">
+
+            <ImageView
+                android:id="@+id/sportImagee"
+                android:layout_width="69dp"
+                android:layout_height="41dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="46dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="11dp"
+                app:srcCompat="@drawable/dumbbell" />
+
+            <TextView
+                android:id="@+id/SportProgramText"
+                android:layout_width="142dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="48dp"
+                android:gravity="center"
+                android:text="Just Sport "
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:background="#A289CD"
+            android:gravity="center"
+            android:onClick="toNutritionProgramQuestions">
+
+            <ImageView
+                android:id="@+id/dietImage2"
+                android:layout_width="69dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="11dp"
+                app:srcCompat="@drawable/vegetable" />
+
+            <TextView
+                android:id="@+id/sportAndDıetProgramText2"
+                android:layout_width="142dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="48dp"
+                android:gravity="center"
+                android:text="Just Nutrition"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

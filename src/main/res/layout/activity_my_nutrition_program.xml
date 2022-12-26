@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".MyNutritionProgramActivity">
+
+    <ImageView
+        android:id="@+id/backInNutrition"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/previous" />
+
+    <TextView
+        android:id="@+id/myNutritionProgramText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#F0DBDB"
+        android:shadowColor="#100A0A"
+        android:shadowDx="30"
+        android:shadowDy="30"
+        android:shadowRadius="100"
+        android:text="My Nutrition Program"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myNutritionProgramText">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mondayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Monday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="Three egg \n Five oil \n One spice cheese \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr chicken \n 100gr rice \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tuesdayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Tuesday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="2pcs smoked turkey \n 1 pcs bread  \n 2 boiled eggs \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="5pcs lean meatball \n 150gr rice \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/wednesdayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Wednesday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="Three egg \n Five oil \n One spice cheese \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr chicken \n 100gr rice \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/thursdayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Thursday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="Two egg \n Bread \n One spice cheese \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr meat \n 150gr rice \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/fridayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Friday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="Two egg \n 1 pcs Bread \n Seven oils \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr chicken \n Pasta \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/saturdayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Saturday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText11"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="Three egg \n One spice cheese \n Seven oils \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText12"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr meat \n Pasta \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/sundayInNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Sunday"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minHeight="140dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/breakfast7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Breakfast"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText13"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="2 pcs smoked turkey \n 1 pcs bread \n Seven oils \n Grean tea" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="30dp"
+                            android:text="Dinner"
+                            android:textColor="#E68C8C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/multiText14"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="140dp"
+                            android:text="200 gr chicken \n Pasta \n Green salad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

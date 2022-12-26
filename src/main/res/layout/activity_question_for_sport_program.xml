@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".QuestionForSportProgram">
+
+
+    <TextView
+        android:id="@+id/questionForSportProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="#F0DBDB"
+        android:shadowColor="#100A0A"
+        android:shadowDx="30"
+        android:shadowDy="30"
+        android:shadowRadius="100"
+        android:text="Questions For Sport Program"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="352dp"
+        android:layout_height="491dp"
+        android:layout_marginTop="96dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/question1Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="25dp"
+            android:text="How much is your weight ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer1Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question2Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How much is your height ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer2Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question3Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="What is your primary body goal you want to achieve ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer3Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question4Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="Why do you want do sports ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/answer4Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question5Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="What is your body type like ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Fat"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Weak"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Low Fat"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitSportQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="#DBA39A"
+        android:onClick="toLogin"
+        android:text="Submit"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

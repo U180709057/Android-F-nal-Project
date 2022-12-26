@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="25dp"
+            android:text="Full Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="Name and Surname"
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="Username"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="Enter "
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="E-Mail"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="Enter"
+            android:inputType="textEmailAddress"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="Password"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="Enter"
+            android:inputType="textPassword"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="Birthday"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getBirthDayProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="Month/Day/Year"
+            android:inputType="date"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textPhoneProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="Phone Number"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getPhoneProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:hint="(0xxx) xxx xxxx"
+            android:inputType="phone"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/registerCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="showTerms"
+        android:text="I accept terms and conditions."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="#DBA39A"
+        android:onClick="toWhatYouDesire"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerCheckBox" />
+
+    <TextView
+        android:id="@+id/toLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="toLogin"
+        android:text="I aldready have an account"
+        android:textColor="#0729E4"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+</android.support.constraint.ConstraintLayout>

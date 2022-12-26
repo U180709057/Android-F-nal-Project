@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".QuestionForNutritionProgram">
+
+
+
+    <TextView
+        android:id="@+id/questionForNutritionProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="#F0DBDB"
+        android:shadowColor="#100A0A"
+        android:shadowDx="30"
+        android:shadowDy="30"
+        android:shadowRadius="100"
+        android:text="Questions For Nutrition Program"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/question1Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="25dp"
+            android:text="How much is your weight ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer1Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question2Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How much is your height ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer2Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question3Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How many meals a day do you eat ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/answer3Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question4Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How much water do you drink daily ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/answer4Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question5Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How do you feed heavily ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/answer5Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/question6Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="25dp"
+            android:text="How long do you sleep at night ?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/answer6Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0DBDB"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="30dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitNutritionQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="#DBA39A"
+        android:onClick="toLogin"
+        android:text="Submit"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

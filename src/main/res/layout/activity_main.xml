@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFCF3"
+    tools:context=".MainLogin" >
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="145dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="54dp"
+        android:text="Username"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/takeUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#F0DBDB"
+        android:ems="10"
+        android:hint="Enter"
+        android:inputType="textPersonName"
+        android:textIsSelectable="false"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="164dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="60dp"
+        android:text="Password"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/takeUserName"
+        app:layout_constraintTop_toBottomOf="@+id/takeUserName" />
+
+    <EditText
+        android:id="@+id/takePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#F0DBDB"
+        android:ems="10"
+        android:hint="Enter"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Remember Me"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/takePassword"
+        app:layout_constraintTop_toBottomOf="@+id/takePassword" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="118dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        android:background="#DBA39A"
+        android:onClick="toHome"
+        android:shadowColor="#C57C7C"
+        android:text="Login"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <TextView
+        android:id="@+id/toRegisterText"
+        android:layout_width="303dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:onClick="toRegister"
+        android:singleLine="false"
+        android:text="Don't have account? Register now!"
+        android:textColor="#0729E4"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <Button
+        android:id="@+id/exitFromApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#E2B8ED"
+        android:onClick="exitFromApp"
+        android:shadowColor="#721CC8"
+        android:shadowRadius="30"
+        android:text="Close Application"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toRegisterText" />
+
+</android.support.constraint.ConstraintLayout>
+
+
