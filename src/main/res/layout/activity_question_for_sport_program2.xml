@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFCF3"
-    tools:context=".QuestionForNutritionProgram">
-
+    tools:context=".QuestionForSportProgram2">
 
 
     <TextView
-        android:id="@+id/questionForNutritionProgram"
+        android:id="@+id/questionForSportProgram2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -19,7 +18,7 @@
         android:shadowDx="30"
         android:shadowDy="30"
         android:shadowRadius="100"
-        android:text="Questions For Nutrition Program"
+        android:text="Questions For Sport Program"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -31,8 +30,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="370dp"
-        android:layout_height="489dp"
+        android:layout_width="352dp"
+        android:layout_height="491dp"
         android:layout_marginTop="96dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,163 +40,151 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/question1Nutrition"
+            android:id="@+id/question1Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:minHeight="30dp"
+            android:minHeight="25dp"
             android:text="How much is your weight ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer1Nutrition"
+            android:id="@+id/answer1Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
             android:hint="kg"
             android:inputType="number"
-            android:minHeight="33dp"
+            android:minHeight="30dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question2Nutrition"
+            android:id="@+id/question2Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:minHeight="30dp"
+            android:minHeight="25dp"
             android:text="How much is your height ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer2Nutrition"
+            android:id="@+id/answer2Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
             android:hint="cm"
             android:inputType="number"
-            android:minHeight="33dp"
+            android:minHeight="30dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question3Nutrition"
+            android:id="@+id/question3Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:minHeight="30dp"
-            android:text="How many meals a day do you eat ?"
+            android:minHeight="25dp"
+            android:text="What is your primary body goal you want to achieve ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer3Nutrition"
+            android:id="@+id/answer3Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="33dp"
+            android:inputType="text"
+            android:minHeight="30dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question4Nutrition"
+            android:id="@+id/question4Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:minHeight="30dp"
-            android:text="How much water do you drink daily ?"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <EditText
-            android:id="@+id/answer4Nutrition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#F0DBDB"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="33dp"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/question5Nutrition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:minHeight="30dp"
-            android:text="How do you feed heavily ?"
+            android:minHeight="25dp"
+            android:text="Why do you want do sports ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
 
         <EditText
-            android:id="@+id/answer5Nutrition"
+            android:id="@+id/answer4Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="33dp"
+            android:inputType="text"
+            android:minHeight="30dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question6Nutrition"
+            android:id="@+id/question5Sport2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:minHeight="30dp"
-            android:text="How long do you sleep at night ?"
+            android:minHeight="25dp"
+            android:text="What is your body type like ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/answer6Nutrition"
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F0DBDB"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="33dp"
-            android:textSize="16sp" />
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Fat"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Weak"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0DBDB"
+                android:text="Low Fat"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </RadioGroup>
 
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/submitNutritionQuestions"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:background="#DBA39A"
-        android:onClick="toLogin"
-        android:text="Submit"
+        android:onClick="toNutritionQuestion2"
+        android:text="NEXT"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

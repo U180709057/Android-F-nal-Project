@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFCF3"
-    tools:context=".QuestionForNutritionProgram">
+    tools:context=".QuestionForNutritionProgram2">
 
 
 
     <TextView
-        android:id="@+id/questionForNutritionProgram"
+        android:id="@+id/questionForNutritionProgram2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -41,51 +41,49 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/question1Nutrition"
+            android:id="@+id/question1Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:minHeight="30dp"
-            android:text="How much is your weight ?"
+            android:text="How much fat do you have ?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer1Nutrition"
+            android:id="@+id/answer1Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
-            android:hint="kg"
-            android:inputType="number"
+            android:inputType="text"
             android:minHeight="33dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question2Nutrition"
+            android:id="@+id/question2Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:minHeight="30dp"
-            android:text="How much is your height ?"
+            android:text="Do you have a disease that affects your diet?"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer2Nutrition"
+            android:id="@+id/answer2Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
-            android:hint="cm"
-            android:inputType="number"
+            android:inputType="number|text"
             android:minHeight="33dp"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question3Nutrition"
+            android:id="@+id/question3Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -96,7 +94,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer3Nutrition"
+            android:id="@+id/answer3Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
@@ -106,7 +104,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question4Nutrition"
+            android:id="@+id/question4Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -118,7 +116,7 @@
 
 
         <EditText
-            android:id="@+id/answer4Nutrition"
+            android:id="@+id/answer4Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
@@ -128,7 +126,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question5Nutrition"
+            android:id="@+id/question5Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -140,7 +138,7 @@
 
 
         <EditText
-            android:id="@+id/answer5Nutrition"
+            android:id="@+id/answer5Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
@@ -150,7 +148,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/question6Nutrition"
+            android:id="@+id/question6Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -161,7 +159,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/answer6Nutrition"
+            android:id="@+id/answer6Nutrition2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
@@ -174,7 +172,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/submitNutritionQuestions"
+        android:id="@+id/submitNutritionQuestions2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -186,18 +184,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

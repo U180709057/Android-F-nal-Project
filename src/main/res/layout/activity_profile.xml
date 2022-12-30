@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:onClick="selectImage"
         android:text="Edit Profile Picture"
         android:textColor="#0729E4"
         android:textSize="18sp"
@@ -36,7 +37,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="342dp"
-        android:layout_height="453dp"
+        android:layout_height="416dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:minHeight="27dp"
             android:text="Full Name"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -62,6 +64,7 @@
             android:ems="10"
             android:hint="Name and Surname"
             android:inputType="textPersonName"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
         <TextView
@@ -69,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:minHeight="27dp"
             android:text="Username"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -82,6 +86,7 @@
             android:ems="10"
             android:hint="Enter "
             android:inputType="textPersonName"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
         <TextView
@@ -89,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:minHeight="27dp"
             android:text="E-Mail"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -102,6 +108,7 @@
             android:ems="10"
             android:hint="Enter"
             android:inputType="textEmailAddress"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
         <TextView
@@ -109,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:minHeight="27dp"
             android:text="Password"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -123,6 +131,7 @@
             android:ems="10"
             android:hint="Enter"
             android:inputType="textPassword"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
         <TextView
@@ -130,6 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:minHeight="27dp"
             android:text="Birthday"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -143,6 +153,7 @@
             android:ems="10"
             android:hint="Month/Day/Year"
             android:inputType="date"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
         <TextView
@@ -150,6 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:minHeight="27dp"
             android:text="Phone Number"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -163,6 +175,7 @@
             android:ems="10"
             android:hint="(0xxx) xxx xxxx"
             android:inputType="phone"
+            android:minHeight="32dp"
             android:textSize="16sp" />
 
 
@@ -188,7 +201,8 @@
             android:layout_weight="1"
             android:background="#DBA39A"
             android:onClick="toHome"
-            android:text="home" />
+            android:text="home"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/profileButton"
@@ -197,11 +211,22 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="#DBA39A"
-            android:text="Profile" />
+            android:text="Profile"
+            android:textStyle="bold" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DBA39A"
+        android:onClick="save"
+        android:text="SAVE"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
-
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

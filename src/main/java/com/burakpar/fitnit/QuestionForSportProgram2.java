@@ -10,20 +10,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.burakpar.fitnit.databinding.ActivityQuestionForNutritionProgramBinding;
+import com.burakpar.fitnit.databinding.ActivityQuestionForSportProgram2Binding;
 
-public class QuestionForNutritionProgram extends AppCompatActivity {
-    private ActivityQuestionForNutritionProgramBinding binding;
+public class QuestionForSportProgram2 extends AppCompatActivity {
+    private ActivityQuestionForSportProgram2Binding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityQuestionForNutritionProgramBinding.inflate(getLayoutInflater());
+        binding = ActivityQuestionForSportProgram2Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);
     }
 
-    public void toLogin(View view){
+
+    public void toNutritionQuestion2(View view){
         getAndPushData();
         Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
 
@@ -38,14 +39,14 @@ public class QuestionForNutritionProgram extends AppCompatActivity {
 
         }
         cursor.close();
-        Intent intent = new Intent(QuestionForNutritionProgram.this, MainLogin.class);
+        Intent intent = new Intent(QuestionForSportProgram2.this, QuestionForNutritionProgram2.class);
         startActivity(intent);
     }
 
     public double bodyMassIndex(){
-        double weight =  Double.parseDouble(binding.answer1Nutrition.getText().toString());
+        double weight =  Double.parseDouble(binding.answer1Sport2.getText().toString());
 
-        double height = Double.parseDouble(binding.answer2Nutrition.getText().toString());
+        double height = Double.parseDouble(binding.answer2Sport2.getText().toString());
         double sonuc = (weight / ((height /100) * height/100) );
         return sonuc;
     }
@@ -55,11 +56,11 @@ public class QuestionForNutritionProgram extends AppCompatActivity {
             value.put("bmı",String.valueOf(bodyMassIndex()));
             userDataBase.update("users",value,"userName = ?" ,new String[] {LoginUserName});
 
+
         }catch (Exception e){
             e.printStackTrace();
         }
 
     }
-
 
 }

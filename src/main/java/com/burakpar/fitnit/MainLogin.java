@@ -1,23 +1,29 @@
 package com.burakpar.fitnit;
 
+import static com.burakpar.fitnit.RegisterActivity.takeFromDataBaseToArrayList;
+import static com.burakpar.fitnit.RegisterActivity.userDataBase;
+import static com.burakpar.fitnit.RegisterActivity.usersArrayList;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
-import static com.burakpar.fitnit.RegisterActivity.userDataBase;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.burakpar.fitnit.databinding.ActivityMainBinding;
 
 
 public class MainLogin extends AppCompatActivity {
 
+
+    public static int onlineUserIndex ;
     private ActivityMainBinding binding;
-    public String onlineUserID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +62,19 @@ public class MainLogin extends AppCompatActivity {
         try {
             Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
             int userNameIndex = cursor.getColumnIndex("userName");
-            int onlineUserId = cursor.getColumnIndex("id");
             int password = cursor.getColumnIndex("password");
-
+            takeFromDataBaseToArrayList();
             while (cursor.moveToNext()){
                 if (cursor.getString(userNameIndex).matches(userNameWhoWantoBeOnline)){
                     if(cursor.getString(password).matches(passwordWhoWanttoBeOnline)) {
-                        onlineUserID = cursor.getString(onlineUserId);
+                            onlineUserIndex = 0;
+
+                        for(int i = 0 ; i< usersArrayList.size() ; i++){
+                            if(userNameWhoWantoBeOnline.matches(usersArrayList.get(i).user_name) ){
+                                onlineUserIndex = i;
+                                break;
+                            }
+                        }
                         startActivity(intent);
                         isTrueInfo = false;
                         break;

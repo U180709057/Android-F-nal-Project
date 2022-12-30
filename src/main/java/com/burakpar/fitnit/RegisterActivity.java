@@ -1,15 +1,16 @@
 package com.burakpar.fitnit;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.burakpar.fitnit.databinding.ActivityRegisterBinding;
 
@@ -18,8 +19,9 @@ import java.util.ArrayList;
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
+    static String LoginUserName;
     public static SQLiteDatabase userDataBase ;  // SQLite data baseini tanımladık
-    ArrayList<String> userInformations; // data ları çekip bu arraylistin içine atıyoruz
+    static ArrayList<Users> usersArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +31,16 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(view);
 
 
-
         userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);  // Data Base oluşturduk.
-        userDataBase.execSQL("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY , fullName VARCHAR, userName VARCHAR , eMail VARCHAR , password VARCHAR , birthDay VARCHAR , phoneNumber VARCHAR)");
-
-        userInformations = new ArrayList<>();
+        userDataBase.execSQL("CREATE TABLE IF NOT EXISTS users ( fullName VARCHAR, userName VARCHAR , eMail VARCHAR , password VARCHAR , birthDay VARCHAR , phoneNumber VARCHAR,bmı VARCHAR, image BLOB , sport BOOLEAN, nutrition BOOLEAN )");
 
         /*Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
-
         int nameIndex = cursor.getColumnIndex("fullName");
         int userNameIndex = cursor.getColumnIndex("userName");
         int eMail = cursor.getColumnIndex("eMail");
         int password = cursor.getColumnIndex("password");
         int birthDay = cursor.getColumnIndex("birthDay");
         int phoneNumber = cursor.getColumnIndex("phoneNumber");
-
         while (cursor.moveToNext()){
             System.out.println("Name : " + cursor.getString( nameIndex));
             System.out.println("User name : " + cursor.getString(userNameIndex));
@@ -61,37 +58,33 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public  ArrayList<String> getData(){       /* Data ları bu fonksiyonla id lerine göre alıyoruz */
+    public Users getData(){       /* Data ları bu fonksiyonla id lerine göre alıyoruz */
         String fullName = binding.answer1.getText().toString();
         String userName = binding.answer2.getText().toString();
         String eMAil = binding.answer3.getText().toString();
         String password = binding.answer4.getText().toString();
         String birthday = binding.getBirthDayProfile.getText().toString();
         String phoneNumber = binding.getPhoneProfile.getText().toString();
-
-
-        userInformations.add(fullName);
-        userInformations.add(userName);
-        userInformations.add(eMAil);
-        userInformations.add(password);
-        userInformations.add(birthday);
-        userInformations.add(phoneNumber);
-        return userInformations;
+        String bmı = "0";
+        Users newUser = new Users(fullName,userName,eMAil,password,birthday,phoneNumber);
+        newUser.setBmı(bmı);
+        return newUser;
     }
 
-    public void pushToData(ArrayList<String> userInformations){
+    public void pushToData(Users newUser){
         try {
-            String sqlString = "INSERT INTO users (fullName ,userName,eMail,password,birthDay,phoneNumber) VALUES (?,?,?,?,?,?)";
+            ContentValues values = new ContentValues();
+            values.put("fullName",newUser.getFull_name());
+            values.put("userName",newUser.getUser_name());
+            values.put("eMail",newUser.getEmail());
+            values.put("password",newUser.getPassword());
+            values.put("birthDay",newUser.getBirthday());
+            values.put("phoneNumber",newUser.getPhone_number());
+            values.put("bmı",newUser.getBmı());
 
-            SQLiteStatement sqLiteStatement = userDataBase.compileStatement(sqlString);  // data base ile kullanıcının girdiği register değerlerinii bind ile data base attık.
-            sqLiteStatement.bindString(1,userInformations.get(0));
-            sqLiteStatement.bindString(2,userInformations.get(1));
-            sqLiteStatement.bindString(3,userInformations.get(2));
-            sqLiteStatement.bindString(4,userInformations.get(3));
-            sqLiteStatement.bindString(5,userInformations.get(4));
-            sqLiteStatement.bindString(6,userInformations.get(5));
-            sqLiteStatement.execute();
+            userDataBase.insert("users",null,values);
 
+            takeFromDataBaseToArrayList();
 
         }catch (Exception e){
             e.printStackTrace();
@@ -99,7 +92,40 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
+    public static void takeFromDataBaseToArrayList(){
+        Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
+        usersArrayList.clear();
 
+        while (cursor.moveToNext()){
+            boolean sport = false ;
+            boolean nutrition = false ;
+            String name = cursor.getString(0);
+            String user_name = cursor.getString(1);
+            String email = cursor.getString(2);
+            String password = cursor.getString(3);
+            String birthday = cursor.getString(4);
+            String phoneNumber = cursor.getString(5);
+            byte[] image = cursor.getBlob(7);
+            if(cursor.getInt(8) == 0){
+                sport = false;
+            }else
+                sport = true;
+
+            if(cursor.getInt(9) == 0){
+                nutrition = false;
+            }else
+                nutrition = true;
+
+
+
+            Users newUser = new Users(name, user_name, email, password, birthday, phoneNumber);
+            newUser.setByteArrayImage(image);
+            newUser.setSport(sport);
+            newUser.setNutrition(nutrition);
+            usersArrayList.add(newUser);
+        }
+
+    }
 
 
     public void toWhatYouDesire(View view){
@@ -135,6 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
                         isCheckUsername = true;
                     }
                     if(isCheckUsername) {
+                        LoginUserName = binding.answer2.getText().toString();;
                         pushToData(getData());
                         startActivity(intent);
                     }else{
@@ -180,6 +207,3 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 }
-
-
-
