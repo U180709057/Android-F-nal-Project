@@ -3,7 +3,6 @@ package com.burakpar.fitnit;
 import static com.burakpar.fitnit.MainLogin.onlineUserIndex;
 import static com.burakpar.fitnit.RegisterActivity.takeFromDataBaseToArrayList;
 import static com.burakpar.fitnit.RegisterActivity.usersArrayList;
-import static com.burakpar.fitnit.DecideWhatYouWantActivity.*;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

@@ -42,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ActivityProfileBinding binding;
     ActivityResultLauncher<Intent> activityResultLauncher;
     ActivityResultLauncher<String> permissionLauncher;
+    boolean isPhotoSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);
         takeFromDataBaseToArrayList();
 
         registerLauncher();
@@ -60,8 +62,23 @@ public class ProfileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        try {
+            Cursor cursor3 = userDataBase.rawQuery("SELECT * FROM users",null);
+            while (cursor3.moveToNext()){
+                if(cursor3.getString(1).matches(usersArrayList.get(onlineUserIndex).user_name)){
+                    binding.answer1.setHint(cursor3.getString(0));
+                    binding.answer2.setHint(cursor3.getString(1));
+                    binding.answer3.setHint(cursor3.getString(2));
+                    binding.answer4.setHint(cursor3.getString(3));
+                    binding.getBirthDayProfile.setHint(cursor3.getString(4));
+                    binding.getPhoneProfile.setHint(cursor3.getString(5));
+                }
+            }
 
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
 
     }
@@ -69,65 +86,100 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-   public void save(View view) {
-       boolean isCheckEmail = true;
-       boolean isCheckUserName = true;
+    public void save(View view) {
+        boolean isCheckEmail = true;
+        boolean isCheckUserName = true;
 
 
-       String full_name = binding.answer1.getText().toString();
 
-       String user_name = binding.answer2.getText().toString();
-       String email = binding.answer3.getText().toString();
-       String password = binding.answer4.getText().toString();
-       String birthday = binding.getBirthDayProfile.getText().toString();
-       String phone_number = binding.getPhoneProfile.getText().toString();
-       System.out.println(full_name + user_name + email + password + birthday + phone_number);
-       userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);
-       Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
+        String full_name = binding.answer1.getText().toString();
+
+        String user_name = binding.answer2.getText().toString();
+        String email = binding.answer3.getText().toString();
+        String password = binding.answer4.getText().toString();
+        String birthday = binding.getBirthDayProfile.getText().toString();
+        String phone_number = binding.getPhoneProfile.getText().toString();
+        userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);
+        Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
 
 
-       while (cursor.moveToNext()){
-           if(cursor.getString(1).matches(user_name)) {
-               isCheckUserName = false;
-               break;
-           }else
-               isCheckUserName = true;
-       }
 
-       if(email.contains("@")){
-          isCheckEmail = true;
-      }else
-          isCheckEmail = false;
-       if (isCheckUserName){
-           if(isCheckEmail) {
-               try {
-                   ContentValues value = new ContentValues();
-                   value.put("fullName", full_name);
-                   System.out.println("burası 5 ");
-                   value.put("userName", user_name);
-                   value.put("eMail", email);
-                   System.out.println("burası 6 ");
-                   value.put("password", password);
-                   value.put("birthDay", birthday);
-                   value.put("phoneNumber", phone_number);
-                   byte[] byteImage = getBitmapAsByteArray(selectedImage);
-                   value.put("image", byteImage);
-                   userDataBase.update("users", value, "userName = ?", new String[]{usersArrayList.get(onlineUserIndex).getUser_name()});
+        while (cursor.moveToNext()){
+            if(cursor.getString(1).matches(user_name)  ) {
+                isCheckUserName = false;
+                break;
+            }else
+                isCheckUserName = true;
+        }
 
-                   takeFromDataBaseToArrayList();
+        if(user_name.isEmpty()){
+            user_name = binding.answer2.getHint().toString();
+            isCheckUserName = true;
+        }
 
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
-           }else{
-               Toast.makeText(ProfileActivity.this, "Please enter the correct email", Toast.LENGTH_SHORT).show();
-           }
-       }else
-           Toast.makeText(ProfileActivity.this, "This username is taken", Toast.LENGTH_SHORT).show();
+        if(full_name.isEmpty())
+            full_name = binding.answer1.getHint().toString();
+
+        if(password.isEmpty())
+            password = binding.answer4.getHint().toString();
+
+
+
+
+        if(email.contains("@")){
+            isCheckEmail = true;
+        }else
+            isCheckEmail = false;
+
+        if(email.isEmpty()){
+            email = binding.answer3.getHint().toString();
+            isCheckEmail = true;
+        }
+        if(phone_number.isEmpty()){
+            phone_number = binding.getPhoneProfile.getHint().toString();
+        }
+
+        if(birthday.isEmpty()){
+            birthday = binding.getBirthDayProfile.getHint().toString();
+        }
+
+        if (isCheckUserName){
+
+            if(isCheckEmail) {
+
+                try {
+
+                    ContentValues value = new ContentValues();
+
+                    value.put("fullName", full_name);
+                    value.put("userName", user_name);
+
+                    value.put("eMail", email);
+                    value.put("password", password);
+                    value.put("birthDay", birthday);
+                    value.put("phoneNumber", phone_number);
+
+                    if(isPhotoSelected){
+                        byte[] byteImage = getBitmapAsByteArray(selectedImage);
+                        System.out.println("burası çalıştı 13");
+                        value.put("image", byteImage);
+                    }
+                    userDataBase.update("users", value, "userName = ?", new String[]{usersArrayList.get(onlineUserIndex).getUser_name()});
+                    takeFromDataBaseToArrayList();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }else{
+                Toast.makeText(ProfileActivity.this, "Please enter the correct email!", Toast.LENGTH_SHORT).show();
+            }
+        }else
+            Toast.makeText(ProfileActivity.this, "This username is taken!", Toast.LENGTH_SHORT).show();
 
         showDataBase();
 
-   }
+    }
 
     public static byte[] getBitmapAsByteArray(Bitmap bitmap) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -135,23 +187,23 @@ public class ProfileActivity extends AppCompatActivity {
         return outputStream.toByteArray();
     }
 
-   public void showDataBase(){
-       Cursor cursor2 = userDataBase.rawQuery("SELECT * FROM users",null);
-       while (cursor2.moveToNext()){
-           System.out.println("Name : " + cursor2.getString( 0));
-           System.out.println("User name : " + cursor2.getString(1));
-           System.out.println("E-mail : " + cursor2.getString(2));
-           System.out.println("Password : " + cursor2.getString( 3));
-           System.out.println("Birthday : " + cursor2.getString(4));
-           System.out.println("Phone Number : " + cursor2.getString(5));
+    public void showDataBase(){
+        Cursor cursor2 = userDataBase.rawQuery("SELECT * FROM users",null);
+        while (cursor2.moveToNext()){
+            System.out.println("Name : " + cursor2.getString( 0));
+            System.out.println("User name : " + cursor2.getString(1));
+            System.out.println("E-mail : " + cursor2.getString(2));
+            System.out.println("Password : " + cursor2.getString( 3));
+            System.out.println("Birthday : " + cursor2.getString(4));
+            System.out.println("Phone Number : " + cursor2.getString(5));
 
-       }
-       System.out.println("-----------------------------------------------------");
-       System.out.println("-----------------------------------------------------");
-       System.out.println("-----------------------------------------------------");
-       System.out.println("-----------------------------------------------------");
-       cursor2.close();
-   }
+        }
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        cursor2.close();
+    }
 
     public void selectImage(View view) {
 
@@ -169,6 +221,7 @@ public class ProfileActivity extends AppCompatActivity {
         } else {
             Intent intentToGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             activityResultLauncher.launch(intentToGallery);
+            isPhotoSelected = true;
         }
 
     }
@@ -188,10 +241,12 @@ public class ProfileActivity extends AppCompatActivity {
                                     if (Build.VERSION.SDK_INT >= 28) {
                                         ImageDecoder.Source source = ImageDecoder.createSource(ProfileActivity.this.getContentResolver(),imageData);
                                         selectedImage = ImageDecoder.decodeBitmap(source);
+                                        isPhotoSelected = true;
                                         binding.profileImage.setImageBitmap(selectedImage);
 
                                     } else {
                                         selectedImage = MediaStore.Images.Media.getBitmap(ProfileActivity.this.getContentResolver(),imageData);
+                                        isPhotoSelected = true;
                                         binding.profileImage.setImageBitmap(selectedImage);
                                     }
 
@@ -243,12 +298,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         return Bitmap.createScaledBitmap(image,width,height,true);
     }
-
-
-
-
-
-
 
 
 

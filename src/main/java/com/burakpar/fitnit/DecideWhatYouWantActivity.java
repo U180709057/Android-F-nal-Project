@@ -1,6 +1,5 @@
 package com.burakpar.fitnit;
 
-import static com.burakpar.fitnit.MainLogin.onlineUserIndex;
 import static com.burakpar.fitnit.RegisterActivity.userDataBase;
 import static com.burakpar.fitnit.RegisterActivity.usersArrayList;
 
@@ -52,8 +51,6 @@ public class DecideWhatYouWantActivity extends AppCompatActivity {
 
     public void toNutritionProgramQuestions(View view){
         Intent intent = new Intent(DecideWhatYouWantActivity.this,QuestionForNutritionProgram.class);
-
-
         for(int i = 0 ; i <usersArrayList.size();i++){
             if(usersArrayList.get(i).getUser_name().matches(LoginUserName)){
                 usersArrayList.get(i).setSport(false);
@@ -75,7 +72,7 @@ public class DecideWhatYouWantActivity extends AppCompatActivity {
     }
 
     public void toSportQuestions2(View view){
-        Intent intent = new Intent(DecideWhatYouWantActivity.this,QuestionForSportProgram2.class);
+        Intent intent = new Intent(DecideWhatYouWantActivity.this,FragmentForQuestions.class);
         for(int i = 0 ; i <usersArrayList.size();i++){
             if(usersArrayList.get(i).getUser_name().matches(LoginUserName)){
                 usersArrayList.get(i).setSport(true);
@@ -92,8 +89,6 @@ public class DecideWhatYouWantActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
         startActivity(intent);
 
     }

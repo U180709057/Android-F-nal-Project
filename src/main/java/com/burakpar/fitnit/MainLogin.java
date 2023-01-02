@@ -31,8 +31,6 @@ public class MainLogin extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-
         RememberMeCheckBox(binding.checkBox);
 
         SharedPreferences preferences = getSharedPreferences("checkBox",MODE_PRIVATE);

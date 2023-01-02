@@ -4,59 +4,75 @@ import static com.burakpar.fitnit.RegisterActivity.LoginUserName;
 import static com.burakpar.fitnit.RegisterActivity.userDataBase;
 
 import android.content.ContentValues;
-import android.content.Intent;
+
 import android.database.Cursor;
-import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.burakpar.fitnit.databinding.ActivityQuestionForSportProgram2Binding;
 
-public class QuestionForSportProgram2 extends AppCompatActivity {
-    private ActivityQuestionForSportProgram2Binding binding;
+public class QuestionForSportProgram2 extends Fragment {
+    EditText weightt;
+    EditText heightt;
+
+    ViewGroup viewGroup;
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityQuestionForSportProgram2Binding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
-        userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.activity_question_for_sport_program2,container,false);
+        System.out.println(userDataBase.isOpen());
+        weightt = viewGroup.findViewById(R.id.answer1Sport2);
+        heightt = viewGroup.findViewById(R.id.answer2Sport2);
+        Button button = viewGroup.findViewById(R.id.nextButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Informations Saved",Toast.LENGTH_SHORT).show();
+                getAndPushData();
+                Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
+                while (cursor.moveToNext()){
+                    System.out.println("Name : " + cursor.getString( 0));
+                    System.out.println("User name : " + cursor.getString(1));
+                    System.out.println("E-mail : " + cursor.getString(2));
+                    System.out.println("Password : " + cursor.getString( 3));
+                    System.out.println("Birthday : " + cursor.getString(4));
+                    System.out.println("Phone Number : " + cursor.getString(5));
+                    System.out.println("Body mass ındex : " + cursor.getString(6));
+
+                }
+                cursor.close();
+            }
+        });
+
+        return viewGroup;
     }
 
 
-    public void toNutritionQuestion2(View view){
-        getAndPushData();
-        Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
-
-        while (cursor.moveToNext()){
-            System.out.println("Name : " + cursor.getString( 0));
-            System.out.println("User name : " + cursor.getString(1));
-            System.out.println("E-mail : " + cursor.getString(2));
-            System.out.println("Password : " + cursor.getString( 3));
-            System.out.println("Birthday : " + cursor.getString(4));
-            System.out.println("Phone Number : " + cursor.getString(5));
-            System.out.println("Body mass ındex : " + cursor.getString(6));
-
-        }
-        cursor.close();
-        Intent intent = new Intent(QuestionForSportProgram2.this, QuestionForNutritionProgram2.class);
-        startActivity(intent);
-    }
 
     public double bodyMassIndex(){
-        double weight =  Double.parseDouble(binding.answer1Sport2.getText().toString());
-
-        double height = Double.parseDouble(binding.answer2Sport2.getText().toString());
+        double weight =  Double.parseDouble(weightt.getText().toString());
+        double height = Double.parseDouble(heightt.getText().toString());
         double sonuc = (weight / ((height /100) * height/100) );
         return sonuc;
     }
+
     public void getAndPushData(){
         try {
+
             ContentValues value = new ContentValues();
             value.put("bmı",String.valueOf(bodyMassIndex()));
             userDataBase.update("users",value,"userName = ?" ,new String[] {LoginUserName});
-
-
         }catch (Exception e){
             e.printStackTrace();
         }

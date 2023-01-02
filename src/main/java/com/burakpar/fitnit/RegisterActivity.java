@@ -34,22 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
         userDataBase = this.openOrCreateDatabase("Users",MODE_PRIVATE,null);  // Data Base oluşturduk.
         userDataBase.execSQL("CREATE TABLE IF NOT EXISTS users ( fullName VARCHAR, userName VARCHAR , eMail VARCHAR , password VARCHAR , birthDay VARCHAR , phoneNumber VARCHAR,bmı VARCHAR, image BLOB , sport BOOLEAN, nutrition BOOLEAN )");
 
-        /*Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
-        int nameIndex = cursor.getColumnIndex("fullName");
-        int userNameIndex = cursor.getColumnIndex("userName");
-        int eMail = cursor.getColumnIndex("eMail");
-        int password = cursor.getColumnIndex("password");
-        int birthDay = cursor.getColumnIndex("birthDay");
-        int phoneNumber = cursor.getColumnIndex("phoneNumber");
-        while (cursor.moveToNext()){
-            System.out.println("Name : " + cursor.getString( nameIndex));
-            System.out.println("User name : " + cursor.getString(userNameIndex));
-            System.out.println("E-mail : " + cursor.getString(eMail));
-            System.out.println("Password : " + cursor.getString( password));
-            System.out.println("Birthday : " + cursor.getString(birthDay));
-            System.out.println("Phone Number : " + cursor.getString(phoneNumber));
-        }
-        cursor.close();*/
     }
 
 
@@ -58,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public Users getData(){       /* Data ları bu fonksiyonla id lerine göre alıyoruz */
+    public Users getData(){
         String fullName = binding.answer1.getText().toString();
         String userName = binding.answer2.getText().toString();
         String eMAil = binding.answer3.getText().toString();
@@ -174,7 +158,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this,"Please enter the correct e-mail",Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(RegisterActivity.this,"Please accept the conditions.",Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterActivity.this,"Please accept the conditions.",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -190,14 +174,14 @@ public class RegisterActivity extends AppCompatActivity {
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(RegisterActivity.this,"Conditions Accepted",Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this,"Conditions Accepted",Toast.LENGTH_SHORT).show();
                 binding.registerCheckBox.setChecked(true);
             }
         });
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(RegisterActivity.this,"You should accept conditions",Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this,"You should accept conditions",Toast.LENGTH_SHORT).show();
                 binding.registerCheckBox.setChecked(false);
             }
         });

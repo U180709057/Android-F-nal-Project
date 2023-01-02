@@ -8,12 +8,11 @@
     tools:context=".QuestionForNutritionProgram2">
 
 
-
     <TextView
         android:id="@+id/questionForNutritionProgram2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:background="#F0DBDB"
         android:shadowColor="#100A0A"
         android:shadowDx="30"
@@ -33,12 +32,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="370dp"
         android:layout_height="489dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/questionForNutritionProgram2">
 
         <TextView
             android:id="@+id/question1Nutrition2"
@@ -78,7 +77,7 @@
             android:layout_height="wrap_content"
             android:background="#F0DBDB"
             android:ems="10"
-            android:inputType="number|text"
+            android:inputType="text"
             android:minHeight="33dp"
             android:textSize="16sp" />
 
@@ -175,13 +174,12 @@
         android:id="@+id/submitNutritionQuestions2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="5dp"
         android:background="#DBA39A"
-        android:onClick="toLogin"
-        android:text="Submit"
+        android:text="SAVE"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

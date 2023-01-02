@@ -3,12 +3,10 @@ package com.burakpar.fitnit;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
 import com.burakpar.fitnit.databinding.ActivityMySportProgramBinding;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class MySportProgramActivity extends AppCompatActivity {
@@ -29,8 +27,6 @@ public class MySportProgramActivity extends AppCompatActivity {
         Intent intent = new Intent(MySportProgramActivity.this, HomeActivity.class);
         startActivity(intent);
     }
-
-
 
 
 
