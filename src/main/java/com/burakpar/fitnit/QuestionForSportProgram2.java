@@ -41,6 +41,8 @@ public class QuestionForSportProgram2 extends Fragment {
                 Toast.makeText(getContext(),"Informations Saved",Toast.LENGTH_SHORT).show();
                 getAndPushData();
                 Cursor cursor = userDataBase.rawQuery("SELECT * FROM users",null);
+
+
                 while (cursor.moveToNext()){
                     System.out.println("Name : " + cursor.getString( 0));
                     System.out.println("User name : " + cursor.getString(1));

@@ -93,7 +93,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         String full_name = binding.answer1.getText().toString();
-
         String user_name = binding.answer2.getText().toString();
         String email = binding.answer3.getText().toString();
         String password = binding.answer4.getText().toString();
@@ -143,6 +142,8 @@ public class ProfileActivity extends AppCompatActivity {
             birthday = binding.getBirthDayProfile.getHint().toString();
         }
 
+
+
         if (isCheckUserName){
 
             if(isCheckEmail) {
@@ -161,7 +162,6 @@ public class ProfileActivity extends AppCompatActivity {
 
                     if(isPhotoSelected){
                         byte[] byteImage = getBitmapAsByteArray(selectedImage);
-                        System.out.println("burası çalıştı 13");
                         value.put("image", byteImage);
                     }
                     userDataBase.update("users", value, "userName = ?", new String[]{usersArrayList.get(onlineUserIndex).getUser_name()});
@@ -280,24 +280,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-
-    public Bitmap makeSmallerImage(Bitmap image, int maximumSize) {
-
-        int width = image.getWidth();
-        int height = image.getHeight();
-
-        float bitmapRatio = (float) width / (float) height;
-
-        if (bitmapRatio > 1) {
-            width = maximumSize;
-            height = (int) (width / bitmapRatio);
-        } else {
-            height = maximumSize;
-            width = (int) (height * bitmapRatio);
-        }
-
-        return Bitmap.createScaledBitmap(image,width,height,true);
-    }
 
 
 

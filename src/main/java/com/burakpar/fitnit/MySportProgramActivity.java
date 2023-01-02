@@ -19,8 +19,7 @@ public class MySportProgramActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        YouTubePlayerView youTubePlayerView = binding.video1;
-        youTubePlayerView.enterFullScreen();
+
     }
 
     public void toHome(View view){
